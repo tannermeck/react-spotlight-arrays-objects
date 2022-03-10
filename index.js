@@ -11,6 +11,8 @@ export const getName = ({name}) => (name);
 // REQS: use destructuring and template literals
 
 export const printAddress = (obj) => {
+  //JULIES ANSWER printAddress = ({ name, address: { street, number, city, country}}) => {
+    //return `${name} lives at ${number} ${street}, ${city}, ${country}`
   const { name } = obj;
   const { address } = obj;
   return `${name} lives at ${address.number} ${address.street}, ${address.city}, ${address.country}`
@@ -20,6 +22,13 @@ export const printAddress = (obj) => {
 // Refactor this function so that all values in the object are destructured
 // as part of the funciton definitions (i.e. there should be no dots in the template literals)
 export const printUserInfo = (user) => {
+  //({ username, 
+      // name: { first, last },
+      // info: {
+        // favorites: { food, color },
+        // pet: { name },
+        // address: {number, stree, city, country}
+      // }
   const { username } = user;
   const { first, last} = user.name;
   const { color } = user.info.favorites;
@@ -58,6 +67,7 @@ export const getSum = (...rest) => {
 // getFirstTwoArgs(1, 2, 3, 4, 5) should return [1, 2, [3, 4, 5]]
 // getFirstTwoArgs('a', 'b', 'c', 'd') should return ['a', 'b', ['c', 'd']]
 export const getFirstTwoArgs = (a, b, ...rest) => {
+  //JULIE SOLUTION const arr = [a, b, rest]
   const arr = [];
   arr.push(a);
   arr.push(b);
